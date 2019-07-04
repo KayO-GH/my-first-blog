@@ -13,14 +13,17 @@ def post_detail(request, pk):
 
 def post_new(request):
     if request.method == 'POST':
+        #form is reopened after submitting
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
+            #commit=False prevents the object from being committed to the db till you manually call '.save()' on it
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
             return redirect('post_detail', pk = post.pk)
     else:
+        #form is opened for the first time
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
 
