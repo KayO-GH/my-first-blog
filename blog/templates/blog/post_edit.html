@@ -3,6 +3,7 @@
 {% block content %}
     <h1>New Post</h1>
     <form method="POST" class="post-form">{% csrf_token %}
+        <!-- as_p() renders the form as a series of <p> tags, with each <p> containing one field -->
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
