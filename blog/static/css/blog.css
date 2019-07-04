@@ -52,7 +52,7 @@ h4 {
 }
 
 .post {
-  margin-bottom: 70px;
+  margin-bottom: 40px;
 }
 
 .post h1 a,
@@ -63,6 +63,6 @@ h4 {
 .card {
   border: 1px solid #eee;
   border-radius: 6px;
-  box-shadow: #ccc 5px 5px;
+  box-shadow: 5px 5px 5px #ccc;
   padding: 10px;
 }
