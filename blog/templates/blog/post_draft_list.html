@@ -1,12 +1,13 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+    <h1>Drafts</h1>
     {% for draft in drafts %}
         <div class="post card">
             <div class="date">
                 <p>created: {{ draft.created_date|date:'d-m-Y' }}</p>
             </div>
-            <h1><a href="{% url 'post_detail' pk=draft.pk %}">{{ draft.title }}</a></h1>
+            <h2><a href="{% url 'post_detail' pk=draft.pk %}">{{ draft.title }}</a></h2>
             <p>{{ draft.text|linebreaksbr }}</p>
         </div>
     {% endfor %}
