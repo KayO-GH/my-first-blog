@@ -19,7 +19,7 @@ def post_new(request):
             post = form.save(commit=False)
             #commit=False prevents the object from being committed to the db till you manually call '.save()' on it
             post.author = request.user
-            post.published_date = timezone.now()
+            #post.published_date = timezone.now()
             post.save()
             return redirect('post_detail', pk = post.pk)
     else:
